@@ -1,0 +1,133 @@
+---
+title: "conditionals_loops.Rmd"
+author: "Juliet"
+date: "8/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Task 1
+
+```{r}
+
+pm2_5 <- 180
+
+if (pm2_5 < 100) {
+  print("Low to moderate risk")
+} else if (pm2_5 >= 100 & pm2_5 < 150 ) {
+  print("Unhealthy for sensitive groups")
+} else if (pm2_5 > 150) {
+  print("Health risk present")
+}
+
+
+
+
+```
+
+## Task 2
+
+```{r}
+
+species <- "blue whale"
+#str_detect(species, pattern = "blue whale")
+
+if (str_detect(species, "blue whale")) {
+  print("You found a whale!")
+}
+
+
+```
+
+
+## Task 3
+
+```{r}
+max_airtemp_c <- 24.1
+
+if (max_airtemp_c >27) {
+  print("Temperature too high")
+} else if (max_airtemp_c <= 27) {
+  print("Temperature OK")
+}
+```
+
+
+## Task 4
+
+```{r}
+
+base_burrito <- 6.50
+
+#all options: main_ingredient <- c("veggie", "chicken", "steak")
+main_ingredient <- "chicken"
+
+if (main_ingredient == "veggie") {
+  print(base_burrito)
+} else if (main_ingredient == "chicken") {
+  print(base_burrito + 3)
+} else if (main_ingredient == "steak") {
+  print(base_burrito + 3.25)
+}
+
+
+```
+
+# For Loops!!!!!!!!
+
+## Task 5
+
+```{r}
+fish <- c(8, 10, 12, 23)
+
+total_fish <- 8 + 10 + 12 + 23
+total_fish
+
+# fish represents counts of goldfish, tetras, guppies, & mollies, respectively
+
+for(i in seq_along(fish)) {
+  if (fish[i] == 8) {
+    print("8/53 are goldfish")
+  } else if (fish[i] == 10) {
+    print("10/53 are tetras")
+  } else if (fish[i] == 12) {
+    print("12/53 are guppies")
+  } else if (fish[i] == 23) {
+    print("23/53 are mollies")
+  }
+}
+
+```
+
+## Task 6
+
+```{r}
+for (i in seq_along(month.name)) {
+    print(paste(month.name[i], "is month", i))
+}
+    
+# long way:    
+#    ("January is month 1")
+#  } else if (month.name[i] == "February") {
+#    print("February is month 2")
+#  } else if (month.name[i] == "March") {
+#    print("March is month 3")
+#}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
